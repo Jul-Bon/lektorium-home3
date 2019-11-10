@@ -10,7 +10,7 @@ class Pet {
     }
 
     sayHi () {
-        console.log('Привіт, я ' + this.name + '.');
+        console.log('Hi, I\'m ' + this.name + '.');
     }
 
     walking () {
@@ -19,6 +19,7 @@ class Pet {
         this.eat -=20;
         this.walk +=10;
         this.hygiene -=20;
+        console.log('I\'m walking');
     }
 
     eating() {
@@ -26,15 +27,17 @@ class Pet {
         this.happiness += 5;
         this.eat +=10;
         this.hygiene -=10;
+        console.log('I\'m eating');
     }
 
     cleaning() {
         this.health += 10;
         this.happiness += 10;
         this.eat -=10;
+        console.log('I\'m cleaning up');
     }
 
-    gameOver () {
+    gameOver() {
         if (this.health <= 0 ||
         this.health <= 0 ||
         this.happiness <= 0 ||
@@ -44,8 +47,36 @@ class Pet {
             console.log('Game Over');
         }
     }
+
+    life(){
+        if (this.health < 20){
+            console.log('I am very bad');
+        }
+
+        if (this.happiness < 40) {
+            console.log('I\'m sad');
+        }
+
+        if (this.eat < 30) {
+            console.log("I am very hungry");
+        }
+
+        if (this.walk < 50) {
+            console.log('I want to walk');
+        }
+
+        if (this.hygiene < 30) {
+            console.log('It\'s time to freshen up');
+        }
+    }
 }
 
-let myPet = new Pet('Крихта');
+let myPet = new Pet('Tommy');
 myPet.sayHi();
+myPet.eating();
+myPet.cleaning();
+
+myPet.life();
+myPet.gameOver();
+
 //myPet.removeHealth();
